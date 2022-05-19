@@ -1,0 +1,18 @@
+{{
+  import { renderToString, createComponent, generateHydrationScript } from 'solid-js/web';
+  import Navbar from './Navbar.tsx';
+  import Footer from './Footer.tsx';
+}}
+<html>
+<head>
+{{ generateHydrationScript() }}
+</head>
+<body>
+  <div id="solid-nav">{{ renderToString(() => createComponent(Navbar, {})) }}</div>
+  <main>
+    Static Main Content From index.abell
+  </main>
+  <div id="solid-footer">{{ renderToString(() => createComponent(Footer, {})) }}</div>
+  <script src="./index-client.tsx" type="module"></script>
+</body>
+</html>
